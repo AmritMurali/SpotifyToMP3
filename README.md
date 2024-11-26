@@ -18,7 +18,7 @@ Install the requirements
 ```
 pip install -r requirements.txt
 ```
-Go to https://ffmpeg.org/download.html and download/extract a build, NOT source code. Add the bin folder to your PATH.
+Go to https://ffmpeg.org/download.html and download/extract a build, NOT source code. Add the bin folder to your PATH (go to your search menu and type Edit the system environment variables, then Environment Variables..., under User Variables select Path, then edit, then click new and add the path of the bin folder, for example my path was C:\Program Files\ffmpeg-master-latest-win64-gpl-shared\ffmpeg-master-latest-win64-gpl-shared\bin)
 ```
 ffmpeg -version
 ```
