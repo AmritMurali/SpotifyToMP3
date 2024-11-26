@@ -63,18 +63,14 @@ for s in songs:
 if not os.path.exists(name):
     os.makedirs(name)
 
-for url, song_name in zip(urls, songs):
-    output_path = os.path.join(name, f'{song_name}')
-    
-    ydl_opts = {
+for url, song_name in zip(urls, songs):    
+    ydl = yt_dlp.YoutubeDL({
         'format': 'bestaudio/best',
         'postprocessors': [{
             'key': 'FFmpegExtractAudio',
             'preferredcodec': 'mp3',
             'preferredquality': '192',
         }],
-        'outtmpl': output_path,
-    }
-    
-    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-        ydl.download([url])
+        'outtmpl': os.path.join(name, f'{song_name}'),
+    })
+    ydl.download([url])
