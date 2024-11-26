@@ -1,7 +1,17 @@
 # SpotifyToMP3 instructions
+Install git if you don't have it https://git-scm.com/downloads and then navigate to the directory you want to be in.
+```
+git clone https://github.com/AmritMurali/SpotifyToMP3.git
+```
+```
+cd SpotifyToMP3
+
+```
 Go to https://www.python.org/downloads/ and download/install python/pip (Python's package installer)
 ```
 python --version
+```
+```
 pip --version
 ```
 Install the requirements
