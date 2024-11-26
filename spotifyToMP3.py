@@ -49,12 +49,17 @@ else:
 for s in songs:
     response3 = requests.get("https://www.googleapis.com/youtube/v3/search", params={
         "key": GOOGLE_KEY,
-        "q": s
+        "q": s,
+        "type": "video",
+        "order": "viewCount"
     })
 
     if response3.status_code == 200:
         response3 = response3.json()
-        urls.append("https://www.youtube.com/watch?v="+response3['items'][0]['id']['videoId'])
+        index = 0
+        while not 'videoId' in response3['items'][index]['id']:
+            index = index + 1
+        urls.append("https://www.youtube.com/watch?v="+response3['items'][index]['id']['videoId'])
     else:
         print(f"Error {response3.status_code}: {response3.text}")
         sys.exit()
