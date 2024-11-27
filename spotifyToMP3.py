@@ -59,7 +59,6 @@ for s in songs:
         urls.append("https://www.youtube.com/watch?v="+response3['items'][0]['id']['videoId'])
     else:
         print(f"Error {response3.status_code}: {response3.text}")
-        sys.exit()
 
 # getting mp3 for all songs
 if not os.path.exists(name):
