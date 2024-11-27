@@ -4,6 +4,7 @@ import os
 import yt_dlp
 import eyed3
 from dotenv import load_dotenv
+from io import BytesIO
 
 load_dotenv()
 SPOTIFY_CLIENT_ID = os.getenv('SPOTIFY_CLIENT_ID')
@@ -11,7 +12,7 @@ SPOTIFY_CLIENT_SECRET = os.getenv('SPOTIFY_CLIENT_SECRET')
 SPOTIFY_PLAYLIST_ID = os.getenv('SPOTIFY_PLAYLIST_ID')
 GOOGLE_KEY = os.getenv('GOOGLE_KEY')
 
-folder_name, urls, artist_names, album_names, track_names, years = None, [], [], [], [], []
+folder_name, urls, artist_names, album_names, track_names, years, images = None, [], [], [], [], [], []
 
 # getting spotify token
 response = requests.post("https://accounts.spotify.com/api/token", headers={
@@ -41,6 +42,7 @@ if response2.status_code == 200:
         album_names.append(item['track']['album']['name'])
         artist_names.append(item['track']['artists'][0]['name'])
         years.append(item['track']['album']['release_date'].split('-')[0])
+        images.append(BytesIO(requests.get(item['track']['album']['images'][0]['url']).content))
 else:
     print(f"Error {response2.status_code}: {response2.text}")
     sys.exit()
@@ -81,4 +83,5 @@ for i in range(0, len(track_names)):
     audio_file.tag.artist = artist_names[i]
     audio_file.tag.album = album_names[i]
     audio_file.tag.release_date = years[i]
+    audio_file.tag.images.set(3, images[i].read(), "image/jpeg")
     audio_file.tag.save()
