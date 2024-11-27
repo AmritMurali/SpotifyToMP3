@@ -31,7 +31,7 @@ while True:
         'postprocessors': [{
             'key': 'FFmpegExtractAudio',
             'preferredcodec': 'mp3',
-            'preferredquality': '192',
+            'preferredquality': '0',
         }],
         'outtmpl': os.path.join(os.path.dirname(os.path.abspath(__file__)), f'{search}'),
     })

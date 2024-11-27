@@ -72,7 +72,7 @@ for i in range(0, len(track_names)):
         'postprocessors': [{
             'key': 'FFmpegExtractAudio',
             'preferredcodec': 'mp3',
-            'preferredquality': '192',
+            'preferredquality': '0',
         }],
         'outtmpl': os.path.join(folder_name, f'{track_names[i]}'),
     })
