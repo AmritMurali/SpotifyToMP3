@@ -18,7 +18,7 @@ Install the requirements
 ```
 pip install -r requirements.txt
 ```
-Go to https://ffmpeg.org/download.html and download/extract a build, NOT source code. Add the bin folder to your PATH (go to your search menu and type Edit the system environment variables, then Environment Variables..., under User Variables select Path, then edit, then click new and add the path of the bin folder, for example my path was C:\Program Files\ffmpeg-master-latest-win64-gpl-shared\ffmpeg-master-latest-win64-gpl-shared\bin)
+Go to https://ffmpeg.org/download.html and download/extract a build, NOT source code. I moved it in the Program Files folder in my C Drive. Add the bin folder to your PATH (go to your search menu and type Edit the system environment variables, then Environment Variables..., under User Variables select Path, then edit, then click new and add the path of the bin folder, for example my path was C:\Program Files\ffmpeg-master-latest-win64-gpl-shared\ffmpeg-master-latest-win64-gpl-shared\bin)
 ```
 ffmpeg -version
 ```
@@ -29,7 +29,7 @@ SPOTIFY_CLIENT_SECRET="PASTE HERE"
 SPOTIFY_PLAYLIST_ID="PASTE HERE"
 GOOGLE_KEY="PASTE HERE"
 ```
-Go to https://developer.spotify.com/, create an account/login, go to the dashboard and create an app (i put http://localhost:3000 for the URI).
+Go to https://developer.spotify.com/, create an account/login, go to the dashboard and create an app (i put http://localhost:3000 for the URI). Check Web API.
 Then go in your app and click settings. Then go to basic information and get your SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET.
 
 Next, go to the spotify playlist you want to create MP3 files for. The URL should look like this https://open.spotify.com/playlist/SPOTIFY_PLAYLIST_ID.
