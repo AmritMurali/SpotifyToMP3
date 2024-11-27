@@ -47,6 +47,12 @@ Out of the 63 songs I tried, 5 songs were mislabeled. I suggest doing 20 songs a
 
 # SearchToMP3 instructions
 Skip the spotify steps, but add the GOOGLE_KEY. Just type the name of the audio you want and type 0 when you're done.
+```
+python searchToMP3.py
+```
 
 # UrlToMP3 instructions
 You don't need a .env file and you can skip the spotify and google steps. Just paste the url of the audio you want and type 0 when you're done.
+```
+python urlToMP3.py
+```
