@@ -58,8 +58,6 @@ for s in songs:
     if response3.status_code == 200:
         response3 = response3.json()
         index = 0
-        while not 'videoId' in response3['items'][index]['id']:
-            index = index + 1
         urls.append("https://www.youtube.com/watch?v="+response3['items'][index]['id']['videoId'])
     else:
         print(f"Error {response3.status_code}: {response3.text}")
