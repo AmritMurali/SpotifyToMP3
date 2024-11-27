@@ -45,8 +45,6 @@ else:
     print(f"Error {response2.status_code}: {response2.text}")
     sys.exit()
 
-print(folder_name, urls, artist_names, album_names, track_names, years)
-
 if not os.path.exists(folder_name):
     os.makedirs(folder_name)
 
