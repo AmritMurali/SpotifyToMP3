@@ -10,7 +10,7 @@ SPOTIFY_CLIENT_SECRET = os.getenv('SPOTIFY_CLIENT_SECRET')
 SPOTIFY_PLAYLIST_ID = os.getenv('SPOTIFY_PLAYLIST_ID')
 GOOGLE_KEY = os.getenv('GOOGLE_KEY')
 songs = []
-name = None
+folder_name = None
 urls = []
 
 # getting spotify token
@@ -35,7 +35,7 @@ response2 = requests.get("https://api.spotify.com/v1/playlists/{}".format(SPOTIF
 
 if response2.status_code == 200:
     response2 = response2.json()
-    name = response2['name']
+    folder_name = response2['name']
     for item in response2['tracks']['items']:
         track_name = item['track']['name']
         track_album = item['track']['album']['name']
@@ -59,11 +59,10 @@ for s in songs:
         urls.append("https://www.youtube.com/watch?v="+response3['items'][0]['id']['videoId'])
     else:
         print(f"Error {response3.status_code}: {response3.text}")
-        sys.exit()
 
 # getting mp3 for all songs
-if not os.path.exists(name):
-    os.makedirs(name)
+if not os.path.exists(folder_name):
+    os.makedirs(folder_name)
 
 for url, song_name in zip(urls, songs):    
     ydl = yt_dlp.YoutubeDL({
@@ -73,6 +72,6 @@ for url, song_name in zip(urls, songs):
             'preferredcodec': 'mp3',
             'preferredquality': '192',
         }],
-        'outtmpl': os.path.join(name, f'{song_name}'),
+        'outtmpl': os.path.join(folder_name, f'{song_name}'),
     })
     ydl.download([url])

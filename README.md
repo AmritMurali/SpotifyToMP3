@@ -44,4 +44,4 @@ python spotifyToMP3.py
 ```
 After it is done, the folder will appear in the same directory. That's it!
 
-Out of the 57 songs I tried, 4 gave wrong songs so it is accurate. I suggest doing 20 songs at a time.
+Out of the 61 songs I tried, 4 gave wrong songs so it is accurate. I suggest doing 20 songs at a time.
