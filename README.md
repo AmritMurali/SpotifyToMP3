@@ -43,7 +43,7 @@ python spotifyToMP3.py
 ```
 After it is done, the folder will appear in the same directory. That's it!
 
-Out of the 63 songs I tried, 5 songs were mislabeled. I suggest doing 20 songs at a time.
+Out of the 67 songs I tried, 5 songs were mislabeled. I suggest doing 20 songs at a time.
 
 # SearchToMP3 instructions
 Skip the spotify steps, but add the GOOGLE_KEY. Just type the name of the audio you want and type 0 when you're done.
@@ -56,3 +56,10 @@ You don't need a .env file and you can skip the spotify and google steps. Just p
 ```
 python urlToMP3.py
 ```
+
+If you're interested in creating a similar project, here are some useful links to save you time.
+
+Getting Spotify Token API: https://developer.spotify.com/documentation/web-api/tutorials/getting-started
+Getting Spotify Playlist API: https://developer.spotify.com/documentation/web-api/reference/get-playlist
+Info on Youtube API: https://developers.google.com/youtube/v3/docs/search/list#parameters
+Embedding yt_dlp: https://dev.to/_ken0x/downloading-and-converting-youtube-videos-to-mp3-using-yt-dlp-in-python-20c5 and https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#embedding-yt-dlp
