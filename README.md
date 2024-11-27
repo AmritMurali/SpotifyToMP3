@@ -29,12 +29,13 @@ SPOTIFY_CLIENT_SECRET="PASTE HERE"
 SPOTIFY_PLAYLIST_ID="PASTE HERE"
 GOOGLE_KEY="PASTE HERE"
 ```
-Go to https://developer.spotify.com/, create an account/login, go to the dashboard and create an app (i put http://localhost:3000 for the URI). Check Web API. This could take some time if you create a new account. Then go in your app and click settings. Then go to basic information and get your SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET.
+Go to https://developer.spotify.com/, create an account/login, go to the dashboard and create an app (i put http://localhost:3000 for the URI). Check Web API.   
+This could take some time if you create a new account. Then go in your app and click settings. Then go to basic information and get your SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET.
 
 Next, go to the spotify playlist you want to create MP3 files for. The URL should look like this https://open.spotify.com/playlist/SPOTIFY_PLAYLIST_ID.
 
-Lastly, go to https://console.cloud.google.com/ and login to a gmail account. Go to the navigation menu (three lines on top-left), then APIs and Services, then Enabled APIs and Services.
-Create a project, then click on Enable APIs and Services, scroll to Youtube Data API v3 and enable it.
+Lastly, go to https://console.cloud.google.com/ and login to a gmail account. Go to the navigation menu (three lines on top-left), then APIs and Services, then Enabled APIs and Services.  
+Create a project, then click on Enable APIs and Services, scroll to Youtube Data API v3 and enable it.  
 Next, it will ask you to create credentials (select public data) and it will give you the GOOGLE_KEY, select done.
 
 Add these four strings to your .env file and then run (NOTE: do not use a playlist with over 50 songs or you will go over the credit limit for the youtube api calls)
@@ -60,6 +61,6 @@ python urlToMP3.py
 If you're interested in creating a similar project, here are some useful links to save you time.
 
 Getting Spotify Token API: https://developer.spotify.com/documentation/web-api/tutorials/getting-started  
-Getting Spotify Playlist API: https://developer.spotify.com/documentation/web-api/reference/get-playlist
-Info on Youtube API: https://developers.google.com/youtube/v3/docs/search/list#parameters
+Getting Spotify Playlist API: https://developer.spotify.com/documentation/web-api/reference/get-playlist  
+Info on Youtube API: https://developers.google.com/youtube/v3/docs/search/list#parameters  
 Embedding yt_dlp: https://dev.to/_ken0x/downloading-and-converting-youtube-videos-to-mp3-using-yt-dlp-in-python-20c5 and https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#embedding-yt-dlp
