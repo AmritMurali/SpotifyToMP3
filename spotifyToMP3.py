@@ -51,7 +51,8 @@ for s in songs:
         "key": GOOGLE_KEY,
         "q": s,
         "type": "video",
-        "order": "viewCount"
+        "order": "viewCount",
+        "maxResults": 2
     })
 
     if response3.status_code == 200:
