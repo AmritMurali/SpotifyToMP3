@@ -2,6 +2,7 @@ import requests
 import sys
 import os
 import yt_dlp
+import eyed3
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -9,9 +10,8 @@ SPOTIFY_CLIENT_ID = os.getenv('SPOTIFY_CLIENT_ID')
 SPOTIFY_CLIENT_SECRET = os.getenv('SPOTIFY_CLIENT_SECRET')
 SPOTIFY_PLAYLIST_ID = os.getenv('SPOTIFY_PLAYLIST_ID')
 GOOGLE_KEY = os.getenv('GOOGLE_KEY')
-songs = []
-folder_name = None
-urls = []
+
+folder_name, urls, artist_names, album_names, track_names, years = None, [], [], [], [], []
 
 # getting spotify token
 response = requests.post("https://accounts.spotify.com/api/token", headers={
@@ -37,19 +37,24 @@ if response2.status_code == 200:
     response2 = response2.json()
     folder_name = response2['name']
     for item in response2['tracks']['items']:
-        track_name = item['track']['name']
-        track_album = item['track']['album']['name']
-        song = track_name + ", " + track_album
-        songs.append(song)
+        track_names.append(item['track']['name'])
+        album_names.append(item['track']['album']['name'])
+        artist_names.append(item['track']['artists'][0]['name'])
+        years.append(item['track']['album']['release_date'].split('-')[0])
 else:
     print(f"Error {response2.status_code}: {response2.text}")
     sys.exit()
 
-# getting youtube urls for each song
-for s in songs:
+print(folder_name, urls, artist_names, album_names, track_names, years)
+
+if not os.path.exists(folder_name):
+    os.makedirs(folder_name)
+
+for i in range(0, len(track_names)):  
+    # getting youtube urls for each song
     response3 = requests.get("https://www.googleapis.com/youtube/v3/search", params={
         "key": GOOGLE_KEY,
-        "q": s,
+        "q": track_names[i] + ", " + album_names[i],
         "type": "video",
         "maxResults": 1
     })
@@ -59,12 +64,9 @@ for s in songs:
         urls.append("https://www.youtube.com/watch?v="+response3['items'][0]['id']['videoId'])
     else:
         print(f"Error {response3.status_code}: {response3.text}")
+        sys.exit()
 
-# getting mp3 for all songs
-if not os.path.exists(folder_name):
-    os.makedirs(folder_name)
-
-for url, song_name in zip(urls, songs):    
+    # getting mp3 for all songs
     ydl = yt_dlp.YoutubeDL({
         'format': 'bestaudio/best',
         'postprocessors': [{
@@ -72,6 +74,13 @@ for url, song_name in zip(urls, songs):
             'preferredcodec': 'mp3',
             'preferredquality': '192',
         }],
-        'outtmpl': os.path.join(folder_name, f'{song_name}'),
+        'outtmpl': os.path.join(folder_name, f'{track_names[i]}'),
     })
-    ydl.download([url])
+    ydl.download([urls[i]])
+
+    # adding metadata
+    audio_file = eyed3.load(os.path.join(folder_name, f"{track_names[i]}.mp3"))
+    audio_file.tag.artist = artist_names[i]
+    audio_file.tag.album = album_names[i]
+    audio_file.tag.release_date = years[i]
+    audio_file.tag.save()
