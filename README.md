@@ -1,5 +1,5 @@
 # SpotifyToMP3 instructions
-Install git if you don't have it https://git-scm.com/downloads and then navigate to the directory you want to be in.
+Install git if you don't have it https://git-scm.com/downloads and then navigate to the directory you want to be in. Go in command prompt and navigate into the directory you want to put the files in
 ```
 git clone https://github.com/AmritMurali/SpotifyToMP3.git
 ```
@@ -38,7 +38,7 @@ Lastly, go to https://console.cloud.google.com/ and login to a gmail account. Go
 Create a project, then click on Enable APIs and Services, scroll to Youtube Data API v3 and enable it.
 Next, it will ask you to create credentials (select public data) and it will give you the GOOGLE_KEY, select done.
 
-Add these four strings to your .env file and then run
+Add these four strings to your .env file and then run (NOTE: do not use a playlist with over 50 songs or you will go over the credit limit for the youtube api calls)
 ```
 python spotifyToMP3.py
 ```
