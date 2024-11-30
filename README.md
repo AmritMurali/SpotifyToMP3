@@ -45,13 +45,13 @@ python spotifyToMP3.py
 That's it!
 
 # SearchToMP3 instructions
-Skip the spotify steps, but add the GOOGLE_KEY and MUSIC_PATH. Just type the name of the audio you want and type 0 when you're done.
+Skip the spotify steps, but add the GOOGLE_KEY. Just type the name of the audio you want and type 0 when you're done.
 ```
 python searchToMP3.py
 ```
 
 # UrlToMP3 instructions
-You just need a .env file for MUSIC_PATH and you can skip the spotify and google steps. Just paste the url of the audio you want and type 0 when you're done.
+You can skip the env file. Just paste the url of the audio you want and type 0 when you're done. The mp3 file appears in the same directory as the program.
 ```
 python urlToMP3.py
 ```
