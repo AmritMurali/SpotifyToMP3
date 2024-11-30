@@ -47,8 +47,6 @@ python spotifyToMP3.py
 ```
 After it is done, the folder will appear in the same directory. That's it!
 
-Out of the 67 songs I tried, 5 songs were mislabeled. I suggest doing 20 songs at a time.
-
 # SearchToMP3 instructions
 Skip the spotify steps, but add the GOOGLE_KEY and MUSIC_PATH. Just type the name of the audio you want and type 0 when you're done.
 ```
