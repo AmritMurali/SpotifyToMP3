@@ -12,7 +12,7 @@ SPOTIFY_PLAYLIST_ID = os.getenv('SPOTIFY_PLAYLIST_ID')
 GOOGLE_KEY = os.getenv('GOOGLE_KEY')
 PATH = r"{}".format(os.getenv('MUSIC_PATH'))
 
-folder_name, urls, artist_names, album_names, track_names, years = None, [], [], [], [], []
+urls, artist_names, album_names, track_names, years = [], [], [], [], []
 
 # getting spotify token
 response = requests.post("https://accounts.spotify.com/api/token", headers={
@@ -29,14 +29,14 @@ else:
     print(f"Error {response.status_code}: {response.text}")
     sys.exit()
 
-# getting song and album names from spotify playlist
+# getting info from spotify playlist
 response2 = requests.get("https://api.spotify.com/v1/playlists/{}".format(SPOTIFY_PLAYLIST_ID), headers={
     "Authorization": "Bearer " + response['access_token']
 })
 
 if response2.status_code == 200:
     response2 = response2.json()
-    folder_name = response2['name']
+    # response2['name'] is the name of the spotify playlist
     for item in response2['tracks']['items']:
         track_names.append(item['track']['name'])
         album_names.append(item['track']['album']['name'])
@@ -84,4 +84,4 @@ for i in range(0, len(track_names)):
     # audio_file.tag.release_date = years[i]
     # audio_file.tag.year = years[i]
     audio_file.tag.images.set(3, requests.get(response2['tracks']['items'][i]['track']['album']['images'][0]['url']).content, "image/jpeg", u"album cover")
-    audio_file.tag.save(version=eyed3.id3.ID3_V2_3)
+    audio_file.tag.save()
