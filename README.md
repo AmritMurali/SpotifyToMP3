@@ -65,3 +65,4 @@ Getting Spotify Token API: https://developer.spotify.com/documentation/web-api/t
 Getting Spotify Playlist API: https://developer.spotify.com/documentation/web-api/reference/get-playlist  
 Info on Youtube API: https://developers.google.com/youtube/v3/docs/search/list#parameters  
 Embedding yt_dlp: https://dev.to/_ken0x/downloading-and-converting-youtube-videos-to-mp3-using-yt-dlp-in-python-20c5 and https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#embedding-yt-dlp
+Eyed3 docs: https://eyed3.readthedocs.io/en/latest/
