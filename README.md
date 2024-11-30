@@ -1,5 +1,5 @@
 # SpotifyToMP3 instructions
-Install git if you don't have it https://git-scm.com/downloads and then navigate to the directory you want to be in. Go in command prompt and navigate into the directory you want to put the files in.
+Install git if you don't have it https://git-scm.com/downloads and then navigate to the directory you want to be in. Go in command prompt (run as administrator) and navigate into the directory you want to put the files in.
 ```
 git clone https://github.com/AmritMurali/SpotifyToMP3.git
 ```

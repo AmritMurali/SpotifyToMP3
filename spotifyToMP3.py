@@ -79,7 +79,7 @@ for i in range(0, len(track_names)):
     audio_file.tag.version = eyed3.id3.ID3_V2_3
     audio_file.tag.artist = artist_names[i]
     audio_file.tag.album = album_names[i]
-    # yo my homies this aint work bruh so sad wawawa plz fix fowme
+    # this dont work
     # audio_file.tag.original_release_date = years[i]
     # audio_file.tag.release_date = years[i]
     # audio_file.tag.year = years[i]
