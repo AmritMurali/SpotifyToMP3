@@ -28,6 +28,7 @@ SPOTIFY_CLIENT_ID="PASTE HERE"
 SPOTIFY_CLIENT_SECRET="PASTE HERE"
 SPOTIFY_PLAYLIST_ID="PASTE HERE"
 GOOGLE_KEY="PASTE HERE"
+MUSIC_PATH=C:\Users\PUT_YOUR_USERNAME_HERE\Music
 ```
 Go to https://developer.spotify.com/, create an account/login, go to the dashboard and create an app (i put http://localhost:3000 for the URI). Check Web API.   
 This could take some time if you create a new account. Then go in your app and click settings. Then go to basic information and get your SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET.
@@ -38,7 +39,9 @@ Lastly, go to https://console.cloud.google.com/ and login to a gmail account. Go
 Create a project, then click on Enable APIs and Services, scroll to Youtube Data API v3 and enable it.  
 Next, it will ask you to create credentials (select public data) and it will give you the GOOGLE_KEY, select done.
 
-Add these four strings to your .env file and then run (NOTE: do not use a playlist with over 50 songs or you will go over the credit limit for the youtube api calls)
+MUSIC_PATH is the path to the directory you want to put the audio files in, DO NOT PUT QUOTES.
+
+Add these five things to your .env file and then run (NOTE: do not use a playlist with over 50 songs or you will go over the credit limit for the youtube api calls)
 ```
 python spotifyToMP3.py
 ```
@@ -47,13 +50,13 @@ After it is done, the folder will appear in the same directory. That's it!
 Out of the 67 songs I tried, 5 songs were mislabeled. I suggest doing 20 songs at a time.
 
 # SearchToMP3 instructions
-Skip the spotify steps, but add the GOOGLE_KEY. Just type the name of the audio you want and type 0 when you're done.
+Skip the spotify steps, but add the GOOGLE_KEY and MUSIC_PATH. Just type the name of the audio you want and type 0 when you're done.
 ```
 python searchToMP3.py
 ```
 
 # UrlToMP3 instructions
-You don't need a .env file and you can skip the spotify and google steps. Just paste the url of the audio you want and type 0 when you're done.
+You just need a .env file for MUSIC_PATH and you can skip the spotify and google steps. Just paste the url of the audio you want and type 0 when you're done.
 ```
 python urlToMP3.py
 ```
