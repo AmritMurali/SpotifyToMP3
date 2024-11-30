@@ -46,9 +46,6 @@ else:
     print(f"Error {response2.status_code}: {response2.text}")
     sys.exit()
 
-if not os.path.exists(folder_name):
-    os.makedirs(folder_name)
-
 for i in range(0, len(track_names)):  
     # getting youtube urls for each song
     response3 = requests.get("https://www.googleapis.com/youtube/v3/search", params={
