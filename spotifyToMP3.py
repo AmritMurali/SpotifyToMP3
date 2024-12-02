@@ -3,6 +3,7 @@ import sys
 import os
 import yt_dlp
 import eyed3
+import re
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -61,6 +62,8 @@ for i in range(0, len(track_names)):
     else:
         print(f"Error {response3.status_code}: {response3.text}")
         sys.exit()
+
+    track_names[i] = re.sub(r'[<>:"/\\|?*]', '_', track_names[i]) # replacing invalid characters for file name
 
     # getting mp3 for all songs
     ydl = yt_dlp.YoutubeDL({
