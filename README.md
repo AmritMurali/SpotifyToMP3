@@ -1,5 +1,5 @@
 # SpotifyToMP3
-SpotifyToMP3 is an automated music downloader and metadata manager that integrates the Spotify and Youtube API. It retrieves tracks from your playlist, searches for the most relevant video on Youtube, downloads audio using yt-dlp, then stores the metadata using eyed3.
+SpotifyToMP3 is an automated music downloader and metadata manager that integrates the Spotify and Youtube API. It retrieves tracks from your playlist, searches for the most relevant video on Youtube, downloads the audio using yt-dlp, then stores the metadata using eyed3.
 ## Instructions
 1. Install **git** if you don't have it https://git-scm.com/downloads. Go on command prompt and run this command and check if it installed.
 ```
@@ -52,13 +52,13 @@ python spotifyToMP3.py
 ```
 That's it!
 
-# SearchToMP3 instructions
+## SearchToMP3 instructions
 Skip steps 7, 8, & 10. Just type the name of the audio you want and type 0 when you're done.
 ```
 python searchToMP3.py
 ```
 
-# UrlToMP3 instructions
+## UrlToMP3 instructions
 Skip steps 6-10. Just paste the url of the audio you want and type 0 when you're done. The mp3 file appears in the same directory as the program.
 ```
 python urlToMP3.py
