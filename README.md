@@ -13,9 +13,9 @@ python --version
 pip --version
 ```
 3. **Ffmpeg**
-1. Go to https://ffmpeg.org/download.html and download/extract a build, NOT source code. To do this, go to Get Packages & executable files and click on your Operating System. For Windows, I selected Windows builds by BtbN and then chose ffmpeg-master-latest-win64-gpl-shared.
-2. After downloading/extracting, I moved it in the Program Files folder in my C Drive.
-3. Add the bin folder to your PATH (go to your search menu and type Edit the system environment variables, then Environment Variables..., under User Variables select Path, then edit, then click new and add the path of the bin folder, for example my path was C:\Program Files\ffmpeg-master-latest-win64-gpl-shared\ffmpeg-master-latest-win64-gpl-shared\bin)
+  1. Go to https://ffmpeg.org/download.html and download/extract a build, NOT source code. To do this, go to Get Packages & executable files and click on your Operating System. For Windows, I selected Windows builds by BtbN and then chose ffmpeg-master-latest-win64-gpl-shared.
+  2. After downloading/extracting, I moved it in the Program Files folder in my C Drive.
+  3. Add the bin folder to your PATH (go to your search menu and type Edit the system environment variables, then Environment Variables..., under User Variables select Path, then edit, then click new and add the path of the bin folder, for example my path was C:\Program Files\ffmpeg-master-latest-win64-gpl-shared\ffmpeg-master-latest-win64-gpl-shared\bin)
 ```
 ffmpeg -version
 ```
