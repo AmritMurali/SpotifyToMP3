@@ -52,7 +52,7 @@ python spotifyToMP3.py
 ```
 That's it!
 ## SearchToMP3 instructions
-Skip steps 7, 8, & 10. Just type the name of the audio you want and type 0 when you're done.
+Skip steps 7, 8, & 10. Just type the name of the audio you want and type 0 when you're done. The mp3 file appears in the same directory as the program.
 ```
 python searchToMP3.py
 ```
