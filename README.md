@@ -1,5 +1,5 @@
 # SpotifyToMP3
-SpotifyToMP3 is an automated music downloader and metadata manager that integrates the Spotify and Youtube API. It retrieves tracks from your playlist, searches for the most relevant video on Youtube, downloads the audio using yt-dlp, then stores the metadata using eyed3.
+SpotifyToMP3 is an automated music downloader that integrates the Spotify and Youtube API. It retrieves tracks from your playlist, searches for the most relevant video on Youtube, downloads the audio using yt-dlp, then stores the metadata using eyed3.
 ## Instructions
 1. Install **git** if you don't have it https://git-scm.com/downloads. Go on command prompt and run this command and check if it installed.
 ```
