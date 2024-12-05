@@ -46,30 +46,26 @@ MUSIC_PATH=C:\Users\PUT_YOUR_USERNAME_HERE\Music
 
 10. MUSIC_PATH is the path to the directory you want to put the audio files in, add it in your env file and DO NOT PUT QUOTES.
 
-11. Add these five pieces of information to your .env file and then run (NOTE: i think there is a limit of about 75 songs per GOOGLE_KEY, so do the same steps on a different email to get an new GGOGLE_KEY)
+11. Add these five pieces of information to your .env file and then run (NOTE: i think there is a limit of about 75 songs per GOOGLE_KEY, so do the same steps on a different email to get an new GOOGLE_KEY)
 ```
 python spotifyToMP3.py
 ```
 That's it!
-
 ## SearchToMP3 instructions
 Skip steps 7, 8, & 10. Just type the name of the audio you want and type 0 when you're done.
 ```
 python searchToMP3.py
 ```
-
 ## UrlToMP3 instructions
 Skip steps 6-10. Just paste the url of the audio you want and type 0 when you're done. The mp3 file appears in the same directory as the program.
 ```
 python urlToMP3.py
 ```
-
 ## Resources for building a similar project to save you time
 Getting Spotify Token API: https://developer.spotify.com/documentation/web-api/tutorials/getting-started  
 Getting Spotify Playlist API: https://developer.spotify.com/documentation/web-api/reference/get-playlist  
 Info on Youtube API: https://developers.google.com/youtube/v3/docs/search/list#parameters  
 Embedding yt_dlp: https://dev.to/_ken0x/downloading-and-converting-youtube-videos-to-mp3-using-yt-dlp-in-python-20c5 and https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#embedding-yt-dlp  
 Eyed3 docs: https://eyed3.readthedocs.io/en/latest/
-
 ## License
 This project is licensed under the MIT license.
